@@ -1,13 +1,12 @@
 # Sorachio-1B-Chat
 
 ## Overview
-
-Sorachio-1B-Chat is a fine-tuned conversational AI model based on Gemma3, specifically optimized for Indonesian language conversations. This model was trained using Supervised Fine-Tuning (SFT) with QLoRA adapter techniques and subsequently merged for optimal performance.
+Sorachio-1B-Chat is a fine-tuned conversational AI model based on Gemma3, specifically optimized for natural conversations. This multilingual model was trained using Supervised Fine-Tuning (SFT) with QLoRA adapter techniques and subsequently merged for optimal performance.
 
 ## Model Details
-
 - **Base Model**: Gemma3
 - **Model Size**: 1B parameters
+- **Language Support**: Multilingual (Indonesian, English, and more)
 - **Training Method**: Supervised Fine-Tuning (SFT) with Quantized Low-Rank Adaptation (QLoRA) 
 - **Training Infrastructure**: Google Colab T4 GPU (Free Tier)
 - **Dataset**: [IzzulGod/gpt4o-distill-chat-v1](https://huggingface.co/datasets/IzzulGod/gpt4o-distill-chat-v1)
@@ -19,36 +18,27 @@ Sorachio-1B-Chat is a fine-tuned conversational AI model based on Gemma3, specif
 - **Conversation Types**: Mixed single-turn and multi-turn conversations (primarily multi-turn for enhanced conversational capabilities)
 - **Data Source**: GPT-4o distilled chat dataset
 
-### Training Details
-- **Training Epochs**: 3
-- **Total Steps**: 432
-- **Final Training Loss**: 2.277
-- **Training Runtime**: 564.55 seconds
-- **Training Samples per Second**: 6.085
-- **Training Steps per Second**: 0.765
+### Training Setup
+The model was trained with carefully optimized parameters to achieve the best performance within resource constraints:
 
-### Training Hyperparameters
-- **Batch Size**: 4 per device
-- **Gradient Accumulation Steps**: 2
-- **Effective Batch Size**: 8 (4 × 2)
-- **Learning Rate**: 2e-4
-- **Weight Decay**: 0.01
-- **Warmup Ratio**: 0.1
-- **Learning Rate Scheduler**: Cosine
-- **Optimizer**: AdamW 8-bit
-- **Precision**: FP16 (Mixed Precision)
-- **Additional Features**: Group by length for efficiency
+- **Batch Size**: 4 per device with gradient accumulation (effective batch size: 8)
+- **Training Epochs**: 3 full passes through the dataset
+- **Learning Rate**: 2e-4 with cosine decay schedule
+- **Optimizer**: AdamW 8-bit for memory efficiency
+- **Precision**: Mixed FP16 training for faster convergence
+- **Training Time**: ~12 minutes (495 steps total)
+
+### Training Performance
+The model showed consistent improvement throughout training, with loss decreasing from 5.48 to 1.68 over 495 training steps. The final training loss of 2.24 indicates good convergence without overfitting.
 
 ## Quick Start
 
 ### Installation
-
 ```bash
 pip install transformers torch
 ```
 
 ### Usage
-
 ```python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
@@ -95,10 +85,9 @@ print(output_text)
 ```
 
 ### Example Output
-
 > Halo! Aku Sorachio, asisten AI yang siap menemani kamu dalam percakapan apa pun.
-Aku dirancang untuk jadi teman yang bisa kamu ajak ngobrol tanpa batas, dari topik ringan sampai diskusi mendalam.
-Bahkan kalau kamu cuma pengen curhat atau sekadar ngobrol random, aku siap nemenin! 😄
+> Aku dirancang untuk jadi teman yang bisa kamu ajak ngobrol tanpa batas, dari topik ringan sampai diskusi mendalam.
+> Bahkan kalau kamu cuma pengen curhat atau sekadar ngobrol random, aku siap nemenin! 😄
 
 ## Model Downloads
 
@@ -106,46 +95,14 @@ Bahkan kalau kamu cuma pengen curhat atau sekadar ngobrol random, aku siap nemen
 - **[Q8_0 Quantized](https://huggingface.co/IzzulGod/Sorachio-1B-Chat/resolve/main/sorachio-1b-chat-q8_0.gguf?download=true)** - Recommended for most use cases (fast inference, high quality)
 - **[F16 Full Precision](https://huggingface.co/IzzulGod/Sorachio-1B-Chat/resolve/main/sorachio-1b-chat-f16.gguf?download=true)** - Full precision model (maximum quality, slower inference)
 
-## Training Progress
+## Performance & Capabilities
 
-| Step | Training Loss |
-|------|---------------|
-| 40   | 4.875200     |
-| 80   | 2.665700     |
-| 120  | 2.344800     |
-| 160  | 2.242600     |
-| 200  | 2.007000     |
-| 240  | 2.030400     |
-| 280  | 1.973100     |
-| 320  | 1.758300     |
-| 360  | 1.653700     |
-| 400  | 1.709000     |
-
-**Final Training Metrics:**
-- Global Step: 432
-- Training Loss: 2.277
-- Epoch: 3.0
-- Total FLOPs: 1,371,161,336,361,216
-
-## Technical Specifications
-
-### Model Architecture
-- **Framework**: Transformers
-- **Precision**: Float16 (recommended)
-- **Attention Implementation**: Eager
-- **Device Mapping**: Auto
-
-## Use Cases
-
-- Indonesian conversational AI
-- Chatbot applications
-- Educational tools
-- Customer service automation
-- General Indonesian language tasks
+- **Natural Conversations**: Trained on multi-turn dialogues for more engaging and contextual responses
+- **Efficient Training**: Achieved good performance with minimal computational resources
+- **Quick Inference**: Optimized for fast response generation
 
 ## Limitations
 
-- Optimized primarily for Indonesian language
 - Model size limited to 1B parameters
 - Trained on Google Colab T4 GPU constraints
 - Performance may vary with different hardware configurations
