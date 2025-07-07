@@ -1,8 +1,6 @@
 # Sorachio-1B-Chat
 
 [![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-yellow)](https://huggingface.co/IzzulGod/Sorachio-1B-Chat)
-[![License](https://img.shields.io/badge/License-Gemma3-blue.svg)](https://huggingface.co/google/gemma-2-2b/blob/main/LICENSE)
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IzzulGod/Sorachio-1B-Chat)
 
 ## Overview
 
