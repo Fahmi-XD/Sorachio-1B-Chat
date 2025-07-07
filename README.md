@@ -6,7 +6,7 @@ Sorachio-1B-Chat is a fine-tuned conversational AI model based on Gemma3, specif
 ## Model Details
 - **Base Model**: Gemma3
 - **Model Size**: 1B parameters
-- **Language Support**: Multilingual (Indonesian, English, and more)
+- **Language Support**: Multilingual 
 - **Training Method**: Supervised Fine-Tuning (SFT) with Quantized Low-Rank Adaptation (QLoRA) 
 - **Training Infrastructure**: Google Colab T4 GPU (Free Tier)
 - **Dataset**: [IzzulGod/gpt4o-distill-chat-v1](https://huggingface.co/datasets/IzzulGod/gpt4o-distill-chat-v1)
