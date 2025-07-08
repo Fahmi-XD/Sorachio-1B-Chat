@@ -65,7 +65,7 @@ Complete fine-tuning pipeline:
 - Batch Size: 4 per device (effective: 8 with gradient accumulation)
 - Training Epochs: 3
 - Learning Rate: 2e-4 with cosine decay
-- Training Time: ~12 minutes (495 steps)
+- Training Time: ~12 minutes (507 steps)
 - Final Training Loss: 2.24
 
 ### 3. 📓 `convert-gguf.ipynb`
@@ -120,8 +120,8 @@ print(response)
 ## Training Results
 
 The model achieved excellent convergence during training:
-- **Initial Loss**: 5.48 → **Final Loss**: 1.68
-- **Training Duration**: ~12 minutes (495 steps)
+- **Initial Loss**: 5.69 → **Final Loss**: 1.68
+- **Training Duration**: ~12 minutes (507 steps)
 - **Memory Usage**: Optimized for T4 GPU (16GB)
 - **Performance**: Smooth loss reduction without overfitting
 
@@ -130,13 +130,6 @@ The model achieved excellent convergence during training:
 ### GGUF Format (Optimized for Inference)
 - **[Q8_0 Quantized](https://huggingface.co/IzzulGod/Sorachio-1B-Chat/resolve/main/sorachio-1b-chat-q8_0.gguf?download=true)** - Recommended for most use cases
 - **[F16 Full Precision](https://huggingface.co/IzzulGod/Sorachio-1B-Chat/resolve/main/sorachio-1b-chat-f16.gguf?download=true)** - Maximum quality
-
-### HuggingFace Hub
-```bash
-# Download via transformers
-from huggingface_hub import hf_hub_download
-hf_hub_download(repo_id="IzzulGod/Sorachio-1B-Chat", filename="pytorch_model.bin")
-```
 
 ## Performance & Capabilities
 
