@@ -165,26 +165,10 @@ Sorachio: Indonesia adalah negara kepulauan terbesar di dunia dengan lebih dari 
 **English:**
 ```
 User: Tell me about artificial intelligence
-Sorachio: Artificial intelligence is a fascinating field that encompasses machine learning...
+Sorachio: Artificial Intelligence is a fascinating field that encompasses machine learning...
 ```
 
 ## License
 
 This project follows the original Gemma3 license terms. Please refer to the [Gemma3 license](https://huggingface.co/google/gemma-2-2b/blob/main/LICENSE) for usage guidelines.
 
-## Citation
-
-If you use this model or code in your research, please cite:
-
-```bibtex
-@misc{sorachio-1b-chat,
-  title={Sorachio-1B-Chat: A Fine-tuned Conversational AI for Indonesian},
-  author={IzzulGod},
-  year={2024},
-  url={https://huggingface.co/IzzulGod/Sorachio-1B-Chat}
-}
-```
-
----
-
-**🤗 Try the model**: [IzzulGod/Sorachio-1B-Chat](https://huggingface.co/IzzulGod/Sorachio-1B-Chat)  
