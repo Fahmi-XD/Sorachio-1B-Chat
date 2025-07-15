@@ -65,7 +65,7 @@ Complete fine-tuning pipeline:
 - Batch Size: 4 per device (effective: 8 with gradient accumulation)
 - Training Epochs: 3
 - Learning Rate: 2e-4 with cosine decay
-- Training Time: ~12 minutes (507 steps)
+- Training Time: ~12 minutes (534 steps)
 - Final Training Loss: 2.24
 
 ### 3. 📓 `convert-gguf.ipynb`
@@ -121,7 +121,7 @@ print(response)
 
 The model achieved excellent convergence during training:
 - **Initial Loss**: 5.69 → **Final Loss**: 1.68
-- **Training Duration**: ~12 minutes (507 steps)
+- **Training Duration**: ~12 minutes (534 steps)
 - **Memory Usage**: Optimized for T4 GPU (16GB)
 - **Performance**: Smooth loss reduction without overfitting
 
