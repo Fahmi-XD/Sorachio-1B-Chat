@@ -4,7 +4,7 @@
 
 ## Overview
 
-This repository contains the complete source code and training pipeline for **Sorachio-1B-Chat**, a fine-tuned conversational AI model based on Gemma3. The model is specifically optimized for natural conversations in Indonesian and other languages, trained using Supervised Fine-Tuning (SFT) with QLoRA adapter techniques.
+This repository contains the complete source code and training pipeline for **Sorachio-1B-Chat**, a fine-tuned conversational AI model based on Gemma3. The model is specifically optimized for natural conversations in Indonesian and other languages, trained using Supervised Fine-Tuning (SFT) with QLoRA techniques.
 
 🎯 **Ready to use model**: [IzzulGod/Sorachio-1B-Chat](https://huggingface.co/IzzulGod/Sorachio-1B-Chat)
 
